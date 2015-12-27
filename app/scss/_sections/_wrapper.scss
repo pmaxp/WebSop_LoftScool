@@ -1,0 +1,12 @@
+$wrappers: header__, header2__, navigation__, path-navigation__, article-content__, info-block__, footer__;
+
+@each $item in $wrappers {
+	.#{$item}wrapper {
+	    width: 1100px;
+	    margin: 0 auto;
+	}
+}
+
+.wrapper, .maincontent, .footer {
+	width: 100%;
+}

@@ -1,0 +1,20 @@
+
+
+@import "_common/_mixins.scss";
+
+/* --------- adjustment --------- */
+
+@import "_layout/normalize";
+@import "_layout/adjustment";
+@import "_layout/fonts";
+
+/* --------- responsive --------- */
+
+@import "_layout/media";
+
+/* --------- sections --------- */
+
+@import "_sections/_wrapper.scss";
+@import "_sections/_index.scss";
+@import "_sections/_footer.scss";
+@import "_sections/_header.scss";
