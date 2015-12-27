@@ -1,4 +1,4 @@
-# DZ1_loftschool
+# DZ2_loftschool
 
 Как установить мой проект
 
