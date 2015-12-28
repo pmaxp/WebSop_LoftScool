@@ -1,36 +1,22 @@
 .header
 	.header__wrapper
-		ul.socials-list
-			- var socials = ['FB', 'VK', 'TW']
-				each item in socials
-					li.socials__item
-						a(href='#').social__content= item
-		.adress
-			.adress__content
-				| ул. Маяковская 6, офис 17
-		.phone
-			.phone__content
-				| +7 (921) 123-12-13
+		+socials('header')
+		.contacts
+			.contacts-adress
+				a(target="_blank" href='https://maps.yandex.ru/-/CVD6B6~5').contacts-adress__content ул. Маяковская 6, офис 17
+			.contacts-phone
+				a(href="tel:+79211231213").contacts-phone__content +7 (921) 123-12-13
 .header2
 	.header2__wrapper
-		.logo
+		.header2_logo
 			a(href='#').logo__content
-				img(src="/" alt="")
-		.search
-			input( type = "text" name = 'input-search' plaseholder = 'Что будем искать').input-search
-			button.button-search
-				| Найти
-		.header-meny
-			ul.header-meny__list
-				- var socials = ['Карта проезда', 'История заказов', 'Корзина']
-					each item in socials
-						li.header-meny-button
-							a(href='#').header-meny-button__content= item
-.navigation
-	.navigation__wrapper
-		ul.navigation__list
-			- var navigations = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']
-				each item in navigations
-					li.navigation__item
-						.navigation__trigger
-						a(href='#').navigation__content= item
+				img(src="./img/logo/cooltech.png" alt="Cooltech")
+		form.header2_search
+			input(type = "text" name = 'input-search' placeholder = 'Что будем искать').input-search
+			button(type = "button" name = 'button-search').button-search Найти
+		ul.header2-meny__list
+			- var socials = {'Карта проезда':'#map', 'История заказов':'#history-buy', 'Корзина':'#basket'}
+				each value, key in socials
+					li.header2-meny-button
+						a(href=value).header2-meny-button__content= key
+		

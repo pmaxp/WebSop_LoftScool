@@ -1,0 +1,6 @@
+.footer{
+	background-image: url('../img/pattern-futter.jpg');
+}
+.footer{
+	@include socials_icon('footer', 43px, 20px, 15px, 15px, 15px, 15px);
+}

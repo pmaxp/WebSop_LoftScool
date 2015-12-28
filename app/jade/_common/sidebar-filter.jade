@@ -1,0 +1,53 @@
+.sidebar-filter
+	.line-phone-list
+		.line-phone-flagship Флагманы
+		.line-phone-budget Бюджетная линейка
+
+	.presence-for-shops
+
+		.form-topic Наличие в магазин
+		form.presence-for-shops__list
+			.presence-for-shops__item
+				input(type = "radio" name = 'input-shop' value = 's1').presence-for-shops__all
+				span.presence-for-shops_name Во всех магазинах
+			.presence-for-shops__item
+				input(type = "radio" name = 'input-shop' value = 's2').presence-for-shops__near
+				span.presence-for-shops_name В ближайшем ко мне магазине
+
+		.form-topic Бренды
+		form.checkbox-brands__list
+			- var brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola', 'Microsoft']
+				each checkitem in brands
+					.checkbox-brand__
+						input(type = "checkbox" name = 'checkbox-brands' value = checkitem).checkbox-brand
+						span.checkbox-brand_name= checkitem
+			input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
+
+		.form-topic Цена
+		form.price-range__form
+			form.price-range__list
+				.price-range__item
+					span.price-range__name От
+					input(type = "text" name = 'price-range-from' value = 's1').price-range__input					
+				.price-range__item
+					span.price-range__name До
+					input(type = "text" name = 'price-range-to' value = 's2').price-range__input
+				.price-slider__item
+					input(type="range" id="chromeperfectpixel-opacity" min="0" max="1" step="0.01" value="1").price-slider__input
+
+		.form-topic  Цвета
+			.colors-block
+				- var colors = ['white', 'grey', 'black', 'cyan', 'red', 'yellow', 'orange', 'green', 'blue', 'magenta', 'pink', 'brown']
+						each coloritem in colors
+							div(class = 'color-block color-#{coloritem}')
+
+		.form-topic  Операционные системы
+		form.os-sistems__list
+			- var os_sistem = ['Android', 'iOS', 'Windows Phone', 'Symbian', 'Custom']
+				each ositem in os_sistem
+					.os-sistem__item
+						input(type = "checkbox" name = 'checkbox-brands' value = ositem).checkbox-brand
+						span.checkbox-brand_name= ositem
+			input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
+
+					

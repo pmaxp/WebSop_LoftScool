@@ -3,10 +3,11 @@
 @import "_common/_mixins.scss";
 
 /* --------- adjustment --------- */
-
+// @import "../bower/normalize-scss/sass/_normalize";
 @import "_layout/normalize";
 @import "_layout/adjustment";
 @import "_layout/fonts";
+
 
 /* --------- responsive --------- */
 
@@ -15,6 +16,8 @@
 /* --------- sections --------- */
 
 @import "_sections/_wrapper.scss";
-@import "_sections/_index.scss";
-@import "_sections/_footer.scss";
 @import "_sections/_header.scss";
+@import "_sections/_navigation.scss";
+@import "_sections/_footer.scss";
+@import "_sections/_index.scss";
+

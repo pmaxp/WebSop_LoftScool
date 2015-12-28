@@ -1,26 +1,37 @@
 var gulp = require("gulp"),
-	browserSync = require('browser-sync'),
+    browserSync = require('browser-sync'),
     sass = require('gulp-sass'),
-    jade = require('gulp-jade');
+    jade = require('gulp-jade'),
+    plumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps');
 
+//-----------VarsPath------------//
 var jadePath = './app/jade/_pages/*.jade',
-    scssPath = './app/scss/main.scss';
+    scssPath = './app/scss/main.scss',
+    jadePathAll = './app/jade/**/*.jade',
+    scssPathall = './app/scss/**/*.scss';
 
+//-----------On Jade------------//
 gulp.task('jade', function() {
-  var YOUR_LOCALS = {};
+    var YOUR_LOCALS = {};
  
-  gulp.src(jadePath)
-    .pipe(jade({
-      locals: YOUR_LOCALS,
-      pretty: '\t',
-    }))
-    .pipe(gulp.dest('./app/'))
+    gulp.src(jadePath)
+        .pipe(plumber())
+        .pipe(jade({
+            locals: YOUR_LOCALS,
+            pretty: '\t',
+        }))
+        .pipe(gulp.dest('./app/'))
 });
+//-----------On Scss------------//
+gulp.task('sass', function() {
+    return gulp.src(scssPath)
+        .pipe(sourcemaps.init())
+        .pipe(plumber())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./app/css'));
 
-gulp.task('sass', function () {
-  return gulp.src(scssPath)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./app/css'));
 });
 
 gulp.task('compass', function() {
@@ -33,7 +44,7 @@ gulp.task('compass', function() {
         }))
 });
 
-// Загружаем сервер
+//-----------Load Server------------//
 gulp.task('server', function() {
     browserSync({
     	port: 9000,
@@ -42,7 +53,7 @@ gulp.task('server', function() {
         }
     });
 });
-// Слежка за файлами
+//-----------watch files------------//
 gulp.task('watch', function() {
     gulp.watch([
         'app/*.html',
@@ -51,20 +62,16 @@ gulp.task('watch', function() {
     ]).on('change', browserSync.reload);
 })
 
-gulp.task('sass:watch', function () {
-  gulp.watch(scssPath, ['sass']);
+gulp.task('sass:watch', function() {
+    gulp.watch(scssPathall, ['sass']);
 });
 
-gulp.task('compass:watch', function () {
-  gulp.watch(scssPath, ['compass']);
+gulp.task('compass:watch', function() {
+    gulp.watch(scssPath, ['compass']);
 });
 
-gulp.task('jade:watch', function () {
-  gulp.watch(jadePath, ['jade']);
+gulp.task('jade:watch', function() {
+    gulp.watch(jadePathAll, ['jade']);
 });
 
 gulp.task('default',['server', 'watch', 'sass:watch', 'jade:watch']);
-
-// ==========================================
-// =============== Функции ==================
-

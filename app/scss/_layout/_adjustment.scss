@@ -8,6 +8,51 @@ ul {
 }
 
 * {
-	box-sizing: border-box;
+	font-family: opensans-regular-webfont, arial, helvetica;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+//--------------socials------------------//
+@mixin socials_icon($position, $icon_size, $marg_between, $marg_left, $marg_right, $marg_top, $marg_bottom){
+	@at-root{
+		$socials: fb, vk, tw;
+
+		.#{$position}-socials__item{
+			@extend %texthide;
+			margin-left: $marg_between;
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+
+		.#{$position}-socials__link{
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-position: center center;
+			height: $icon_size;
+			width: $icon_size;						
+		}
+
+		.#{$position}-socials__list{
+			margin-left:$marg_left;
+			margin-right:$marg_right;
+			overflow: hidden;
+			display: inline-block;
+			margin-top:$marg_top;
+			margin-bottom:$marg_bottom;
+			padding-left: 0;						
+		}
+		@each $item in $socials{
+			.#{$position}-socials__link_#{$item}{
+				background-image: url(/img/socials/#{$position}/#{$item}.png);
+			}
+			.#{$position}-socials__link_#{$item}:hover{
+					background-image: url(/img/socials/#{$position}/#{$item}-hover.png);
+			}
+		}
+	}
 }
 

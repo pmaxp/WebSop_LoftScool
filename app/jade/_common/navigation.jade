@@ -1,0 +1,6 @@
+ul.navigation__list
+	- var navigations = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']
+		each item in navigations
+			li.navigation__item
+				.navigation__trigger
+				a(href='#').navigation__content= item

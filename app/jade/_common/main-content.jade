@@ -1,0 +1,38 @@
+.main-content
+	.sorting-view
+		.sorting-blok
+			span.sorting-text Сортировать по
+			select.sorting-meny
+				- var sorting_item = ['по цене', 'по популярности']
+					each s_item in sorting_item
+						option.sorting-meny-item= s_item
+		.view-blok
+			span.view-text Вид каталога
+			- var sort_icons = ['list', 'icons', 'tabl']
+				each icitem in sort_icons
+					span(class = 'view-item #{icitem}')
+	.catalog-view
+		+cardProduct(
+			'Samsung GT-I9301I GALAXY S 3',
+			'Смартфон использует четырёхъядерный центральный процессор Exynos 4412 производства Samsung, либо двухъядерный Qualcomm Snapdragon S4, дисплей HD SuperAMOLED с диагональю 4,8 дюйма, аккумулятор ёмкостью 2100 мА·ч, 8-мегапиксельную камеру, 1 Гб оперативной памяти и ряд новых «интеллектуальных» функций, например, собственную разработку Samsung',
+			'189238',
+			'11290',
+			'./img/catalog/tel_189238_01.jpg',
+			'./img/catalog/tel_189238_02.jpg',
+			'./img/catalog/tel_189238_03.jpg',
+			'Samsung GALAXY S3',
+			'Samsung GALAXY S3 front',
+			'Samsung GALAXY S3 back')
+
+		+cardProduct(
+			'Microsoft Lumia 640 RM-1077',
+			'смартфон, MS Windows Phone 8.1 поддержка двух SIM-карт экран 5", разрешение 1280x720 камера 8 МП, автофокус память 8 Гб, слот для карты памяти 3G, 4G LTE, Wi-Fi, Bluetooth, NFC, GPS, ГЛОНАСС аккумулятор 2500 мА·ч вес 145 г, ШxВxТ 72.20x141.30x8.80 мм',
+			'283135',
+			'10990',
+			'./img/catalog/tel_283135_01.jpg',
+			'./img/catalog/tel_283135_02.jpg',
+			'./img/catalog/tel_283135_03.jpg',
+			'Microsoft Lumia 640',
+			'Microsoft Lumia 640 front',
+			'Microsoft Lumia 640 back')
+
