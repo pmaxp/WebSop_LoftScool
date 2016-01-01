@@ -19,7 +19,7 @@ gulp.task('jade', function() {
         .pipe(plumber())
         .pipe(jade({
             locals: YOUR_LOCALS,
-            pretty: '\t',
+            pretty: '\t',           
         }))
         .pipe(gulp.dest('./app/'))
 });

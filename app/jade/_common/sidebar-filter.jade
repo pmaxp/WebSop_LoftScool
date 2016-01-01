@@ -1,11 +1,11 @@
 .sidebar-filter
 	.line-phone-list
-		.line-phone-flagship Флагманы
-		.line-phone-budget Бюджетная линейка
+		div(class='line-phone__item flagship') Флагманы
+		div(class='line-phone__item budget') Бюджетная линейка
 
 	.presence-for-shops
 
-		.form-topic Наличие в магазин
+		.form-topic Наличие в магазинах
 		form.presence-for-shops__list
 			.presence-for-shops__item
 				input(type = "radio" name = 'input-shop' value = 's1').presence-for-shops__all
@@ -16,9 +16,9 @@
 
 		.form-topic Бренды
 		form.checkbox-brands__list
-			- var brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola', 'Microsoft']
+			- var brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
 				each checkitem in brands
-					.checkbox-brand__
+					.checkbox-brand__item
 						input(type = "checkbox" name = 'checkbox-brands' value = checkitem).checkbox-brand
 						span.checkbox-brand_name= checkitem
 			input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
@@ -35,11 +35,11 @@
 				.price-slider__item
 					input(type="range" id="chromeperfectpixel-opacity" min="0" max="1" step="0.01" value="1").price-slider__input
 
-		.form-topic  Цвета
-			.colors-block
-				- var colors = ['white', 'grey', 'black', 'cyan', 'red', 'yellow', 'orange', 'green', 'blue', 'magenta', 'pink', 'brown']
-						each coloritem in colors
-							div(class = 'color-block color-#{coloritem}')
+		.form-topic  Цвет
+		.colors-block
+			- var colors = ['white', 'grey', 'black', 'cyan', 'red', 'yellow', 'orange', 'green', 'blue', 'magenta', 'pink', 'brown']
+					each coloritem in colors
+						div(class = 'color-block color-#{coloritem}')
 
 		.form-topic  Операционные системы
 		form.os-sistems__list

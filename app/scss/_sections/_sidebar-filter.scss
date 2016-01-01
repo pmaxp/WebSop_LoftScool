@@ -1,0 +1,81 @@
+.sidebar-filter{
+	width: 332px;
+	float: left;
+	font-size: 14px;
+}
+.line-phone-list, .presence-for-shops{
+	background-color: #FBFBFB;
+	border: 1px solid #DEDEDE;
+	border-radius: 5px;
+	overflow: hidden;	
+	margin-bottom: 37px;
+}
+
+$padding-sidebar: 26px;
+
+.line-phone__item{
+	background-color: #FBFBFB;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 12px $padding-sidebar 14px $padding-sidebar;
+	color: #818181;
+	&:hover{
+		background-color: #D7E6EC;	
+	}
+}
+.form-topic{
+	font-size: 16px;
+	padding: 12px $padding-sidebar 14px $padding-sidebar;
+	color: black;
+	font-family: opensans-semibold;
+}
+.presence-for-shops__item, .checkbox-brand__item, .os-sistem__item{
+	margin-bottom: 18px;
+}
+.presence-for-shops__list, .checkbox-brands__list, .price-range__list, .price-range__form, .colors-block, .os-sistems__list{
+	padding: 0 $padding-sidebar 0 $padding-sidebar;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.clear-filter{
+	border: 0;
+	color: #00B3FD;
+	padding: 0;
+	background-color: #FBFBFB;
+	text-decoration: underline;
+	margin-bottom: 18px;
+}
+
+.color-block{
+	height: 36px;
+	width: 36px;
+	display: inline-block;
+	margin: 5px 12px 12px 5px;
+	border: 1px solid #DEDEDE;
+	cursor: pointer;
+	&:hover{
+		border: 2px solid #FF6E2D;
+	}
+}
+
+$status-colors: (
+  
+  white: #fff,  
+  grey: #CDCDCD,  
+  black: #000000,  
+  cyan: #002C54,  
+  red: #FF1000,  
+  yellow: #FFF425,  
+  orange: #FF9244,  
+  green: #77C479,  
+  blue: #00A8FF,  
+  magenta: #A671B2,  
+  pink: #F679B1,  
+  brown: #913E13
+);
+
+@each $status, $color in $status-colors{
+	.color-#{$status}{
+		background-color: #{$color};
+	}
+}

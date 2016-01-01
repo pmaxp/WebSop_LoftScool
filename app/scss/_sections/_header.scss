@@ -1,6 +1,5 @@
 .contacts{
-	float: right;
-	margin: 23px 0;
+	float: right;	
 	&-phone, &-adress{
 		display: inline-block;
 		&:before{
@@ -11,20 +10,19 @@
 		}
 		&__content{		
 			color: black;
-			text-decoration: none;
-			font-family: opensans-semibold;		
+			text-decoration: none;	
 		}
 	}
 	&-phone{
 		font-size: 19px;
-		margin-left: 50px;
+		margin-left: 80px;
 		&:before{
 			background-image: url(/img/icons/telephone.png);
 			margin: 7px 3px 0 0;
 		}
 	}
 	&-adress{
-		font-size: 16px;
+		font-size: 14px;
 		&:before{
 			background-image: url(/img/icons/map-pin.png);
 			margin: 4px 10px 0 0;
@@ -40,9 +38,13 @@ $border-header: 2px;
 .header{
 	background-color: #fff;
 	border-bottom: $border-header solid #ECEEF0;
-	@include socials_icon('header', 26px, 12px, 0, 0, 25px, 23 - $border-header);
+	@include socials_icon('header', 26px, 12px, 0, 0, 0, 0);
 	&__wrapper{
+		padding: 25px 0 21px 0;
 	}
+}
+.socials-block{
+	float: left;
 }
 .header2{
 	&_logo, &_search, &-meny-button{
@@ -92,5 +94,5 @@ $border-header: 2px;
 	color: #fff;
 	background-color: #FF6E2D;
 	border: 0;
-	border-radius: 0 4px 4px 0;
-}
+	border-radius: 0 4px 4px 0;}
+

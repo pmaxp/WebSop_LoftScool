@@ -1,9 +1,27 @@
-.sidebar-filter{
-	width: 220px;
-	float: left;
+
+.path-navigation{
+	&__main{
+		margin-bottom: 18px;
+	}
+	&__item{
+		font-size: 14px;
+		color: black;
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+			color: #FF6E2D;
+		}
+	}	
+}
+.icon-path{
+	font-size: 14px;
+	color: black;
+	margin: 0 1px;
 }
 
-.main-content{
-	width: 700px;
-	float: right;
+.path-navigation__topic{
+	font-size: 21px;	
+}
+.path-navigation__name{
+	margin-bottom: 29px;
 }
