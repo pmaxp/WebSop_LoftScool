@@ -6,7 +6,8 @@ var myModule = (function () {
     _accordionInit();
     _columnize();
     _styleSelect2();
-  };  
+    _priseFilter();    
+  };
 
   var _accordionInit = function (){ 
     $( ".accordion" ).accordion({
@@ -26,6 +27,18 @@ var myModule = (function () {
      $(".line-phone-list").on('click', _changePhoneClass); // добавляем класс актив к Phone
      $(".card_product__image-small").on('click', _changeImageBig); // меняем картинку по клику на миниатюру
      $(".view__block").on('click', _changeVeiwCard); // меняем стиль карты продукта
+  };
+
+  var _priseFilter = function (){
+        
+      var prise = $(".card_product__price");
+
+      $.each(prise, function(i, val) { 
+        var priseIn = $(val).text();
+        priseCorr = priseIn.replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1 ");        
+        $(val).text(priseCorr);
+     });
+
   };
 
   var _changeVeiwCard = function (e){

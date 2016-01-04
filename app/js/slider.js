@@ -49,8 +49,9 @@ var sliderRange = (function () {
       else if(event.which) key = event.which;
     
       if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
-      keyChar=String.fromCharCode(key);
       
+      keyChar=String.fromCharCode(key);      
+
       if(!/\d/.test(keyChar)) return false;
   };
 

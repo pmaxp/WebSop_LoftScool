@@ -85,7 +85,7 @@ $image-small: 34px;
         height: 100%;
     }
 	.product__image{
-		display: inline-block;
+		display: block;
         vertical-align: middle;
 		margin: 4px auto;
 	}
@@ -255,9 +255,11 @@ $image-small: 34px;
 	}
 }
 .catalog-view-icons{
+	margin-left: -8px;
+	margin-right: -7px;
 	.card_product__block{
-		border-radius: 7px;		
-		margin: 0 15px 0 0;
+		border-radius: 7px;
+		margin: 0 7px 15px 8px;
 		vertical-align: top;
 		display: inline-block;
 		width: 235px;
