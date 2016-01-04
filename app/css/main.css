@@ -1013,17 +1013,26 @@ ul {
   .view-list:hover {
     background-image: url(/img/icons/list-hover.png); }
 
+.view-list__active {
+  background-image: url(/img/icons/list-hover.png); }
+
 .view-icons {
   background-image: url(/img/icons/icons.png);
   background-position: center center; }
   .view-icons:hover {
     background-image: url(/img/icons/icons-hover.png); }
 
+.view-icons__active {
+  background-image: url(/img/icons/icons-hover.png); }
+
 .view-tabl {
   background-image: url(/img/icons/tabl.png);
   background-position: center center; }
   .view-tabl:hover {
     background-image: url(/img/icons/tabl-hover.png); }
+
+.view-tabl__active {
+  background-image: url(/img/icons/tabl-hover.png); }
 
 .view__block {
   float: right; }

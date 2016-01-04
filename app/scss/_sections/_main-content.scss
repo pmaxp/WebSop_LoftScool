@@ -43,7 +43,10 @@ $sort_icons: 'list', 'icons', 'tabl';
 		&:hover{
 			background-image: url(/img/icons/#{$view_item}-hover.png);
 		}
-	}	
+	}
+	.view-#{$view_item}__active{
+		background-image: url(/img/icons/#{$view_item}-hover.png);
+	}
 }
 .view__block{
 	float: right;	
