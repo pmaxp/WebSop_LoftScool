@@ -1,53 +1,93 @@
 .sidebar-filter
-	.line-phone-list
-		div(class='line-phone__item flagship') Флагманы
-		div(class='line-phone__item budget') Бюджетная линейка
-
+	ul.line-phone-list
+		-
+			var phones = {
+				'Флагманы':'flagship',
+				'Бюджетная линейка':'budget',			
+			};
+		each value, key in phones
+			if key !== 'Бюджетная линейка'
+				li(class='line-phone__item' id=value)= key
+			else
+				li(class='line-phone__item line-phone__item-active' id=value)= key
+				
 	.presence-for-shops
-
-		.form-topic Наличие в магазинах
-		form.presence-for-shops__list
-			.presence-for-shops__item
-				input(type = "radio" name = 'input-shop' value = 's1').presence-for-shops__all
-				span.presence-for-shops_name Во всех магазинах
-			.presence-for-shops__item
-				input(type = "radio" name = 'input-shop' value = 's2').presence-for-shops__near
-				span.presence-for-shops_name В ближайшем ко мне магазине
-
-		.form-topic Бренды
-		form.checkbox-brands__list
-			- var brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
-				each checkitem in brands
-					.checkbox-brand__item
-						input(type = "checkbox" name = 'checkbox-brands' value = checkitem).checkbox-brand
-						span.checkbox-brand_name= checkitem
-			input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
-
-		.form-topic Цена
-		form.price-range__form
-			form.price-range__list
-				.price-range__item
-					span.price-range__name От
-					input(type = "text" name = 'price-range-from' value = 's1').price-range__input					
-				.price-range__item
-					span.price-range__name До
-					input(type = "text" name = 'price-range-to' value = 's2').price-range__input
-				.price-slider__item
-					input(type="range" id="chromeperfectpixel-opacity" min="0" max="1" step="0.01" value="1").price-slider__input
-
-		.form-topic  Цвет
-		.colors-block
-			- var colors = ['white', 'grey', 'black', 'cyan', 'red', 'yellow', 'orange', 'green', 'blue', 'magenta', 'pink', 'brown']
-					each coloritem in colors
-						div(class = 'color-block color-#{coloritem}')
-
-		.form-topic  Операционные системы
-		form.os-sistems__list
-			- var os_sistem = ['Android', 'iOS', 'Windows Phone', 'Symbian', 'Custom']
-				each ositem in os_sistem
-					.os-sistem__item
-						input(type = "checkbox" name = 'checkbox-brands' value = ositem).checkbox-brand
-						span.checkbox-brand_name= ositem
-			input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
+		.accordion
+			h3.form-topic Наличие в магазинах
+			form.presence-for-shops__form
+				ul.presence-for-shops__list
+					li.presence-for-shops__item
+						input(type = "radio" checked="checked" id='all_shops' name = 'input-shop' ).presence-input
+						label(for='all_shops').presence-for-shops_name Во всех магазинах
+					li.presence-for-shops__item
+						input(type = "radio" id='nearest_shop' name = 'input-shop' ).presence-input
+						label(for='nearest_shop').presence-for-shops_name В ближайшем ко мне магазине
+		.accordion
+			h3.form-topic Бренды
+			form.checkbox-brands__form
+				ul.checkbox-brand__list
+					-
+						var brands = [
+						'Lenovo',
+						'Apple',
+						'Samsung',
+						'Asus',
+						'Motorola'
+						];
+					each checkitem in brands
+						li.checkbox-brand__item
+							input(type = "checkbox" name = 'checkbox-brands[]' id=checkitem).checkbox-brand
+							label(for=checkitem).checkbox-brand_name= checkitem
+					li.checkbox-brand__item
+						input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
+		.accordion
+			h3.form-topic Цена
+			form.price-range__form
+				form.price-range__list
+					.price-range__item
+						span.price-range__name от
+						input(type = "text" id="minCost" name = 'price-range' value = 's1').price-range__input					
+					.price-range__item.price-range__left
+						span.price-range__name до
+						input(type = "text" id="maxCost" name = 'price-range' value = 's2').price-range__input
+					div(id="slider-range").price-slider__item
+		.accordion
+			h3.form-topic  Цвет
+			ul.colors-block
+				-
+					var colors = [
+					'white',
+					'grey',
+					'black',
+					'cyan',
+					'red',
+					'yellow',
+					'orange',
+					'green',
+					'blue',
+					'magenta',
+					'pink',
+					'brown'
+					];
+				each coloritem in colors
+					li(class = 'color-block color-#{coloritem}')
+		.accordion
+			h3.form-topic  Операционные системы
+			form.os-sistems__form
+				ul.os-sistems__list
+					-
+						var os_sistem = [
+						'Android',
+						'iOS',
+						'Windows Phone',
+						'Symbian',
+						'Custom'
+						];
+					each ositem in os_sistem
+						li.os-sistem__item
+							input(type = "checkbox" name = 'checkbox-brands' id=ositem).checkbox-brand
+							label(for=ositem).checkbox-brand_name= ositem
+					li.os-sistem__item
+						input(type = "reset" name = 'checkbox-brands' value = 'Сбросить фильтр').clear-filter
 
 					

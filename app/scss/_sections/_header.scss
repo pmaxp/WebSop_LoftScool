@@ -1,5 +1,7 @@
-.contacts{
-	float: right;	
+.contacts-block{
+	float: right;
+}
+.contacts{		
 	&-phone, &-adress{
 		display: inline-block;
 		&:before{
@@ -15,7 +17,7 @@
 	}
 	&-phone{
 		font-size: 19px;
-		margin-left: 80px;
+		margin-left: 83px;
 		&:before{
 			background-image: url(/img/icons/telephone.png);
 			margin: 7px 3px 0 0;
@@ -39,12 +41,15 @@ $border-header: 2px;
 	background-color: #fff;
 	border-bottom: $border-header solid #ECEEF0;
 	@include socials_icon('header', 26px, 12px, 0, 0, 0, 0);
-	&__wrapper{
+	&__wrapper, &2__wrapper{
 		padding: 25px 0 21px 0;
 	}
+	&2__wrapper{
+		padding: 29px 0 24px 0;
+	}
 }
-.socials-block{
-	float: left;
+.social-text{
+	@extend %texthide;
 }
 .header2{
 	&_logo, &_search, &-meny-button{
@@ -53,22 +58,29 @@ $border-header: 2px;
 	&_logo{		
 		width: 238px;
 		height: 36px;
-		margin: 29px 0 29px 0;
+		// margin: 29px 0 29px 0;
 	}	
 	&_search{
-		margin: 30px 56px;
-		position: absolute;
+		// margin: 30px 56px;
+		vertical-align: top;
+    	margin-left: 52px;
+    	position: relative;
 	}
 	&-meny__list{
 		float: right;
-		margin-top: 35px;
+		list-style: none;
+		margin: 7px 0 0 0;
+		padding: 0;		
 	}
 	&-meny-button{
 		font-size: 16px;
-		margin: 0 0 0 31px;
+		margin: 0 0 0 29px;
+		&:first-child{
+			margin: 0;
+		}
 		&__content{
 			font-family: opensans-semibold;
-			color: black;			
+			color: black;
 			&:hover{
 				color: #FF6E2D;
 			}

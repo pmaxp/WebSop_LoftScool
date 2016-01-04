@@ -1,11 +1,13 @@
 footer.footer
 	.footer__wrapper
 		.footer-content
-			a(href='#').logo__content
-				img(src="./img/logo/cooltech-2.png" alt="Cooltech")
-			.footer_socials
-				+socials('footer')
-			.navigation_footer
-				include ./navigation
-		.footer__content
-			| &copy; All rights reserved. 2015. no copy alowed
+			.logo_footer
+				a(href='#').logo__content
+					img(src="./img/logo/cooltech-2.png" alt="Cooltech")
+			.footer__right
+				.footer_socials
+					+socials('footer')
+				.navigation_footer
+					include ./navigation
+	.footer__copyright
+		| &copy; All rights reserved. 2015. no copy alowed

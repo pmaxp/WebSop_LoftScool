@@ -5,6 +5,8 @@ html, body {
 
 ul {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 * {
@@ -12,6 +14,12 @@ ul {
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    &:before, &:after{
+    	font-family: opensans-regular-webfont, arial, helvetica;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
 }
 
 
@@ -20,14 +28,14 @@ ul {
 	@at-root{
 		$socials: fb, vk, tw;
 
-		.#{$position}-socials__item{
-			@extend %texthide;
+		.#{$position}-socials__item{			
 			margin-left: $marg_between;
+			display: inline-block;
 			&:first-child{
 				margin-left: 0;
 			}
 		}
-
+		
 		.#{$position}-socials__link{
 			display: inline-block;
 			background-repeat: no-repeat;
@@ -35,15 +43,18 @@ ul {
 			height: $icon_size;
 			width: $icon_size;						
 		}
-
-		.#{$position}-socials__list{
+		.#{$position}-socials-block{
 			margin-left:$marg_left;
 			margin-right:$marg_right;
 			overflow: hidden;
 			display: inline-block;
 			margin-top:$marg_top;
 			margin-bottom:$marg_bottom;
-			padding-left: 0;						
+	}
+		.#{$position}-socials__list{			
+			padding: 0;
+			line-height: 0;
+			margin: 0;		
 		}
 		@each $item in $socials{
 			.#{$position}-socials__link_#{$item}{

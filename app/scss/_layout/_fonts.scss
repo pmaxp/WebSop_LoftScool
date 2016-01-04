@@ -1,4 +1,4 @@
-$myfonts: elektra_light_pro-webfont, elektra_medium_pro_italic-webfont, elektra_medium_pro-webfont, font-webfont, opensans-regular-webfont, opensans-semibold;
+$myfonts: opensans-bold, elektra_light_pro-webfont, elektra_medium_pro_italic-webfont, elektra_medium_pro-webfont, font-webfont, opensans-regular-webfont, opensans-semibold;
 
 @each $item in $myfonts {
 	@font-face {

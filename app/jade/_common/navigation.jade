@@ -1,6 +1,18 @@
 ul.navigation__list
-	- var navigations = {'Планшеты':'#plates', 'Мобильные телефоны':'#Mobiles', 'Mp3 плееры':'#MP3', 'Персональные компьютеры':'#PC', 'Ноутбуки':'#laptops', 'Аксессуары':'#Accessories', 'Бытовая техника':'#Appliances'}
-		each value, key in navigations
+	-
+		var navigations = {
+			'Планшеты':'#plates',
+			'Мобильные телефоны':'#Mobiles',
+			'Mp3 плееры':'#MP3',
+			'Персональные компьютеры':'#PC',
+			'Ноутбуки':'#laptops',
+			'Аксессуары':'#Accessories',
+			'Бытовая техника':'#Appliances'
+		};
+	each value, key in navigations
+		if key !== 'Мобильные телефоны'
 			li.navigation__item
-				.navigation__trigger
 				a(href=value).navigation__content= key
+		else
+			li.navigation__item
+				a(href=value).navigation__content-active.navigation__content= key

@@ -6,13 +6,13 @@
 				- var sorting_item = ['по цене', 'по популярности']
 					each s_item in sorting_item
 						option.sorting-meny-item= s_item
-			.view-blok
+			.view-wrapper
 				span.view-text Вид каталога
-				.view__list
+				.view__block
 					- var sort_icons = ['list', 'icons', 'tabl']
 						each icitem in sort_icons
-							span(class = 'view-item view-#{icitem}')
-	.catalog-view
+							span(class = 'view-item view-#{icitem}' view-atribut='catalog-view-#{icitem}')
+	.catalog-view.catalog-view-tabl
 		+cardProduct(
 			'Samsung_GALAXY_S3',
 			'Samsung GT-I9301I GALAXY S 3',
@@ -24,7 +24,15 @@
 			'./img/catalog/tel_189238_03.jpg',
 			'Samsung_GALAXY_S3',
 			'Samsung_GALAXY_S3_front',
-			'Samsung_GALAXY_S3_back')
+			'Samsung_GALAXY_S3_back',
+			'Micro-SIM',
+			'1',
+			'Белый',
+			'Android',
+			'Есть',
+			'Нет',
+			'Есть',
+			'В наличие')
 
 		+cardProduct(
 			'Microsoft_Lumia_640',
@@ -37,5 +45,25 @@
 			'./img/catalog/tel_283135_03.jpg',
 			'Microsoft_Lumia_640',
 			'Microsoft_Lumia_640_front',
-			'Microsoft_Lumia_640_back')
+			'Microsoft_Lumia_640_back',
+			'Micro-SIM',
+			'2',
+			'Белый',
+			'Windows Phone',
+			'Есть',
+			'Нет',
+			'A-GPS',
+			'В наличие')
+
+
+	.pages-nav__block		
+		ul.pages-nav__list
+			li.pages-nav-item <
+			- for (var i = 1; i < 4; i++)
+				if i != 1
+					li.pages-nav-item= i
+				else
+					li.pages-nav-item__active.pages-nav-item= i					
+			li.pages-nav-item >
+
 

@@ -1,47 +1,60 @@
-mixin cardProduct(nameProduct, cardTopic, cardText, cardArticle, cardPrice, product_image01, product_image02, product_image03, product_image_alt01, product_image_alt02, product_image_alt03)
+mixin cardProduct(nameProduct, cardTopic, cardText, cardArticle, cardPrice, product_image01, product_image02, product_image03, product_image_alt01, product_image_alt02, product_image_alt03, tipeSim, SIMs, Color, OS, G, lTE, GPS_modul, Avail)
 
-	div(class=nameProduct).card_product__block-info
-		.card_product__image-block
-			.card_product__image-big
-				img(src=product_image01).product__image
-			.card_product__image-small-list
-				.card_product__image-small
-					img(src=product_image01 alt=product_image_alt01).product__image-item
-				.card_product__image-small
-					img(src=product_image02 alt=product_image_alt02).product__image-item
-				.card_product__image-small
-					img(src=product_image03 alt=product_image_alt03).product__image-item
-			.card_product__article
-				span.card_product__article-name Артикул
-				span.card_product__article-article= cardArticle
-		.card_product__info
-			h2.card_product__topic= cardTopic
-			p.card_product__text= cardText
-			.card_product__rating
-				ul.card_product__rating-stars
-					li.card_product__rating-star
-					li.card_product__rating-star
-					li.card_product__rating-star
-					li.card_product__rating-star
-					li.card_product__rating-star
-				.card_product__rating-number		
-		.card_product__block-price-basked
-			.card_product__price-block
-				.card_product__price= cardPrice
-			.card_product__basked
-				button.card_product__button-basked В корзину
-				.card_product__Availability В наличии
+    .card_product__block
+        .card_product__image-block
+            .card_product__image-big
+                img(src=product_image01 alt=nameProduct title=nameProduct).product__image
+            .card_product__image-small-list
+                .card_product__image-small
+                    img(src=product_image01 alt=product_image_alt01 title=product_image_alt01).product__image-item
+                .card_product__image-small
+                    img(src=product_image02 alt=product_image_alt02 title=product_image_alt02).product__image-item
+                .card_product__image-small
+                    img(src=product_image03 alt=product_image_alt03 title=product_image_alt03).product__image-item
+            .card_product__article
+                span.card_product__article-name Артикул
+                span.card_product__article-article= cardArticle
+        .card_product__info
+            h2.card_product__topic-tabl Смартфон
+            h2.card_product__topic= cardTopic
+            p.card_product__text= cardText
+            ul.card_product__table-list
+                -
+                    var tabls = {
+                    'Тип SIM-карты': tipeSim,
+                    'Количество SIM-карт': SIMs,
+                    'Цвет': Color,
+                    'ОC': OS,
+                    'Связь 3G': G,
+                    '4G (LTE)': lTE,
+                    'GPS-модуль': GPS_modul
+                    };
+                each value, key in tabls
+                    li.card_product__line
+                        span.card_product__item-left= key
+                        span.card_product__item-right= value
+            .card_product__rating
+                ul.card_product__rating-stars
+                    - for (var i = 0; i < 5; i++)
+                        if i != 4
+                            li.card_product__rating-star
+                        else
+                            li.card_product__rating-star.card_product__rating-star-disabled
+                    li.card_product__rating-number 4
+        .card_product__block-price-basked
+            .card_product__price-block
+                .card_product__price= cardPrice
+            .card_product__basked
+                button.card_product__button-basked В корзину
+                .card_product__Availability-block
+                    span.card_product__Availability-item= Avail
+
 
 mixin socials(pos)
-	ul(class='#{pos}-socials__list')
-		- var socials = {'fb':'#fb','vk':'#vk','tw':'#tw'}
-			each value, key in socials
-				li(class='#{pos}-socials__item')
-					a(target="_blank" href=value class='#{pos}-socials__link #{pos}-socials__link_#{key}')= key
-
-	//- ul.socials-list
-	//- 	- var socials = ['fb', 'vk', 'tw']
-	//- 		each item in socials
-	//- 			li.socials__item
-	//- 				a(href='#' class='socials__link socials__link_#{item}')= item
-
+    div(class='#{pos}-socials-block')
+        ul(class='#{pos}-socials__list')
+            - var socials = {'fb':'#fb','vk':'#vk','tw':'#tw'}
+            each value, key in socials
+                li(class='#{pos}-socials__item')
+                    a(target="_blank" href=value class='#{pos}-socials__link #{pos}-socials__link_#{key}')
+                    span.social-text= key

@@ -6,7 +6,11 @@ html(lang='ru')
 		meta(charset='UTF-8')
 		meta(http-equiv='X-UA-Compatible', content="IE=edge,chrome=1")
 		meta(name='viewport' content='width=device-width')
+		//- link(rel="stylesheet" href="/bower/jquery-ui/themes/ui-darkness/jquery-ui.min.css")
+		link(rel="stylesheet" href="/css/select2.min.css")
 		link(rel="stylesheet" href="/css/main.css")
+		script(src='/bower/modernizer/modernizr.js')
+
 		title
 			block title
 	body
@@ -21,4 +25,10 @@ html(lang='ru')
 
 				block content		
 				
-		include _common/footer
+			include _common/footer
+		script(src='bower/jquery/dist/jquery.min.js')
+		script(src='bower/jquery-ui/jquery-ui.min.js')
+		script(src='js/jquery.columnizer.js')
+		script(src='js/select2.min.js')
+		script(src='js/slider.js')
+		script(src='js/main.js')

@@ -21,7 +21,14 @@
 			}
 			&:active{
 				color: #fff;
-		 		background-color: #FF6E2D;				
+		 		background-color: #FF6E2D;		 					
+			}
+			&-active{
+				color: #fff;
+		 		background-color: #FF6E2D;
+		 		&:hover{
+				background-color: #FF6E2D;				
+			}
 			}
 		}
 		// .navigation__content-active {

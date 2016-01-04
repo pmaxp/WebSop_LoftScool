@@ -1,6 +1,61 @@
 .footer{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 	background-image: url('../img/pattern-futter.jpg');
+	&__wrapper{
+		padding: 34px 0 30px 0;
+	}
+	&__right{
+		width: 50%;
+		float: right;
+	}
+	&__copyright{
+		padding: 6px 0 10px 0;
+		text-align: center;
+		color: #fff;
+		font-size: 12px;
+		border-top: 1px solid #494949;
+		font-family: opensans-regular-webfont;
+	}
+	&-content{
+		@extend %clearfix;
+	}
 }
 .footer{
-	@include socials_icon('footer', 43px, 20px, 15px, 15px, 15px, 15px);
+	@include socials_icon('footer', 43px, 20px, 0, 0, 0, 0);
+	&_socials{
+		float: right;
+		margin-bottom: 33px;
+	}
+.navigation_footer{
+	text-align: right;
+	.navigation__list{
+		// margin-bottom: 10px;
+		// padding: 0 0 0 13px;
+		// width: 100%;		
+		.navigation__content{
+			padding: 0 0 0 21px;
+			font-size: 14px;
+			line-height: 36px;
+			// text-decoration: none;			
+			color: #fff;
+			&:hover{
+				color: #FF6E2D;	
+			}
+			&:active{
+				color: #fff;
+		 		background-color: #FF6E2D;				
+			}
+		}
+		// .navigation__content-active {
+		// 	color: #fff;
+		// 	background-color: #FF6E2D;
+		// }		
+	}
+}
+}
+.logo_footer{
+	margin-top: 36px;
+	display: inline-block;
 }

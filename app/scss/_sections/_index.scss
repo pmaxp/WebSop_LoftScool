@@ -3,6 +3,20 @@
 	&__main{
 		margin-bottom: 18px;
 	}
+	&-li{
+		display: inline-block;
+		&:before{
+			content: '>';
+			font-size: 14px;
+			color: black;
+			margin: 0 1px;
+			}
+		&:first-child{
+			&:before{
+				content: '';
+			}
+		}	
+	}
 	&__item{
 		font-size: 14px;
 		color: black;
@@ -11,17 +25,33 @@
 			text-decoration: underline;
 			color: #FF6E2D;
 		}
-	}	
+	}
+	&__list{
+		margin: 0px 0 6px -4px;
+		padding: 0;
+		display: inline-block;
+	}
 }
-.icon-path{
-	font-size: 14px;
-	color: black;
-	margin: 0 1px;
-}
-
-.path-navigation__topic{
-	font-size: 21px;	
+.topic{
+	font-size: 20px;
+	font-family: opensans-bold;
+	font-weight: normal;
+	font-style: normal;
 }
 .path-navigation__name{
-	margin-bottom: 29px;
+	margin-bottom: 27px;
+}
+.column{
+	padding: 0 6px;
+	& p {
+		padding: 0;
+		margin: 0 0 20px;
+		text-indent: 25px;
+	}
+	&:first-child{
+		padding-left: 0;
+	}
+	&:last-child{
+		padding-right: 0;
+	}
 }

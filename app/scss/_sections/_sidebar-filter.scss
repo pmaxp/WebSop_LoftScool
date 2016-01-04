@@ -11,7 +11,7 @@
 	margin-bottom: 37px;
 }
 
-$padding-sidebar: 26px;
+$padding-sidebar: 27px;
 
 .line-phone__item{
 	background-color: #FBFBFB;
@@ -22,19 +22,122 @@ $padding-sidebar: 26px;
 	&:hover{
 		background-color: #D7E6EC;	
 	}
+	&-active{
+		background-color: #D7E6EC;
+	}
 }
+.accordion{	
+	border-bottom: 1px solid #DEDEDE;
+}
+
 .form-topic{
 	font-size: 16px;
-	padding: 12px $padding-sidebar 14px $padding-sidebar;
+	padding: 12px $padding-sidebar 15px $padding-sidebar;
 	color: black;
+	margin: 0;
+	position: relative;
 	font-family: opensans-semibold;
+	&:after{
+		position: absolute;
+		right: 11px;
+		top: 20px;
+		height: 11px;
+		width: 18px;
+		content: '';
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	&:hover{
+		&:after{
+			background-image: url(/img/icons/strelk_vniz.png);
+		}
+	}
 }
+.ui-state-active{
+	&:hover{
+		&:after{
+			background-image: url(/img/icons/strelk_vverh.png);
+		}
+	}
+}
+
 .presence-for-shops__item, .checkbox-brand__item, .os-sistem__item{
 	margin-bottom: 18px;
+	&:last-child{
+		margin-bottom: 0;
+	}
 }
-.presence-for-shops__list, .checkbox-brands__list, .price-range__list, .price-range__form, .colors-block, .os-sistems__list{
-	padding: 0 $padding-sidebar 0 $padding-sidebar;
-	border-bottom: 1px solid #DEDEDE;
+.presence-for-shops__form, .checkbox-brands__form, .price-range__list, .price-range__form, .colors-block, .os-sistems__list{
+	padding: 0 $padding-sidebar 19px $padding-sidebar;
+}
+
+.presence-input, .checkbox-brand{
+	display: none;
+}
+
+.presence-for-shops_name{
+	position: relative;
+    padding-left: 30px;
+	&:before{
+		// background-image: url(/img/);
+		content: '';
+		left: 1px;
+		top: 1px;
+		position: absolute;
+		height: 19px;
+		width: 19px;
+		display: inline-block;
+		border-radius: 50%;
+		border: 3px solid #DDE3E6;	
+		background-repeat: no-repeat;
+		background-position: center center;
+	}	
+	&:hover{		
+		&:before{		
+			background-image: url(/img/icons/radio-holder.png);			
+		}
+	}	
+}
+.presence-input:checked + 
+.presence-for-shops_name:before {
+	background-image: url(/img/icons/radio-checked.png);
+	border: 3px solid #FF6E2D;
+}
+
+.checkbox-brand_name{
+	cursor: pointer;
+	position: relative;
+	padding-left: 30px;
+	&:before{
+		// background-image: url(/img/);
+		content: '';
+		left: 1px;
+		top: 1px;
+		position: absolute;
+		height: 19px;
+		width: 19px;
+		display: inline-block;
+		border-radius: 2px;
+		background-color: #DDE3E6;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}	
+	&:hover{		
+		&:before{		
+			background-image: url(/img/icons/checkbox-holder.png);			
+		}
+	}	
+}
+
+.checkbox-brand:checked + 
+.checkbox-brand_name:before {
+	background-image: url(/img/icons/checkbox-checked.png);
+	background-color: #FF6E2D;
+}
+.price-range__item{
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 19px;
 }
 
 .clear-filter{
@@ -43,9 +146,11 @@ $padding-sidebar: 26px;
 	padding: 0;
 	background-color: #FBFBFB;
 	text-decoration: underline;
-	margin-bottom: 18px;
 }
-
+.checkbox-brand_name{
+	position: relative;
+	cursor: pointer;
+}
 .color-block{
 	height: 36px;
 	width: 36px;
@@ -54,6 +159,9 @@ $padding-sidebar: 26px;
 	border: 1px solid #DEDEDE;
 	cursor: pointer;
 	&:hover{
+		border: 2px solid #FF6E2D;
+	}
+	&-active{
 		border: 2px solid #FF6E2D;
 	}
 }
@@ -78,4 +186,64 @@ $status-colors: (
 	.color-#{$status}{
 		background-color: #{$color};
 	}
+}
+// .price-range__item{
+// 	margin-left: 45px;
+// 	&:first-child{
+// 		margin-left: 0px;
+// 	}
+// }
+.price-range__left{
+	float: right;
+}
+.ui-slider-handle{
+	background-color: #333333;
+	height: 8px;
+	width: 8px;
+	top: 8px;
+    margin-left: -4px;
+	cursor: pointer;
+	position: absolute;
+	display: inline-block;
+	outline: none;
+	&:before{
+		content: '';
+		left: 0px;
+		top: -12px;
+		position: absolute;
+		border: 4px solid transparent;
+		border-bottom: 8px solid #333333;
+	}
+	&:hover{
+	background-color: #FF6E2D;	
+		&:before{
+			content: '';
+			border-bottom: 9px solid #FF6E2D;
+		}
+}
+}
+.price-range__input{
+	width: 81px;
+	margin-left: 13px;
+	padding: 4px 8px;
+	border: 2px solid #ebedef;
+	border-radius: 2px;
+	
+}
+
+.price-slider__item{
+	position: relative;
+	height: 3px;
+	margin-bottom: 10px;
+	background-color: #dee1e4;
+}
+.ui-accordion-header{
+	cursor: pointer;
+	outline: none;
+}
+.ui-slider-range{
+	position: absolute;
+	top: 0px;
+	height: 3px;
+	background-color: #FF6E2D;
 }

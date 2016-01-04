@@ -1,6 +1,9 @@
 {
   "name": "WebShop",
   "devDependencies": {
-    "normalize-scss": "normalize.scss#~4.0.3"
+    "normalize-scss": "normalize.scss#~4.0.3",
+    "jquery": "~2.1.4",
+    "modernizer": "~2.8.2",
+    "jquery-ui": "~1.11.4"
   }
 }

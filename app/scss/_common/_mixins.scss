@@ -24,10 +24,11 @@
 
 %texthide{
 	position: absolute;
-	display: inline;
 	text-indent: 100%;
+	overflow: hidden;	
 	white-space: nowrap;
-	text-overflow: clip
+	text-overflow: clip;
+	padding: 0;
 	// parent (overflow: hidden;)
 }
 
