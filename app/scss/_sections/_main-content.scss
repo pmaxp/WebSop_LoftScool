@@ -96,6 +96,7 @@ $image-small: 34px;
 .card_product__image-small-list{
 	margin: 15px 0 7px 0;
 	.card_product__image-small{
+		cursor: pointer;
 		width: $image-small;
 		height: $image-small;
 		overflow: hidden;

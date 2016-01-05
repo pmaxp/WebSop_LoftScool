@@ -818,6 +818,7 @@ ul {
 
 .presence-for-shops_name {
   position: relative;
+  cursor: pointer;
   padding-left: 30px; }
   .presence-for-shops_name:before {
     content: '';
@@ -840,7 +841,6 @@ ul {
   border: 3px solid #FF6E2D; }
 
 .checkbox-brand_name {
-  cursor: pointer;
   position: relative;
   padding-left: 30px; }
   .checkbox-brand_name:before {
@@ -1077,6 +1077,7 @@ ul {
 .card_product__image-small-list {
   margin: 15px 0 7px 0; }
   .card_product__image-small-list .card_product__image-small {
+    cursor: pointer;
     width: 34px;
     height: 34px;
     overflow: hidden;

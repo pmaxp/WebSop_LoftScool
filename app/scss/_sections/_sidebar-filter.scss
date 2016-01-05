@@ -77,6 +77,7 @@ $padding-sidebar: 27px;
 
 .presence-for-shops_name{
 	position: relative;
+	cursor: pointer;
     padding-left: 30px;
 	&:before{
 		// background-image: url(/img/);
@@ -105,7 +106,6 @@ $padding-sidebar: 27px;
 }
 
 .checkbox-brand_name{
-	cursor: pointer;
 	position: relative;
 	padding-left: 30px;
 	&:before{
