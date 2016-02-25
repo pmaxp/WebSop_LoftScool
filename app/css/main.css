@@ -598,7 +598,9 @@ ul {
   color: #fff;
   background-color: #FF6E2D;
   border: 0;
-  border-radius: 0 4px 4px 0; }
+  border-radius: 0 4px 4px 0;
+  bottom: 0;
+  left: 0; }
 
 .navigation__content, .navigation__list, .navigation__item {
   display: inline-block; }
@@ -607,6 +609,9 @@ ul {
   background-color: #fff;
   border-bottom: 2px solid #ECEEF0;
   margin-bottom: 25px; }
+
+.navigation__list {
+  font-size: 0; }
 
 .navigation__wrapper .navigation__list {
   margin: 0;
